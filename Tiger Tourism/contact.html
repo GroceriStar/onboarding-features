@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tiger Tourism</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="myStyles.css">
+        <script src="myScript.js"></script>
+        <link rel="shortcut icon" href="images/logo.ico">
+    </head>
+
+    <body onLoad="rightClick()">
+
+        <header>
+            <div class="logo-div">
+            <a href="index.html">
+                <img src="images/logo.png" alt="logo" class="logo">
+            </a>
+            </div>
+
+            <nav>
+                <a href="index.html">
+                    <p>
+                        Home page
+                    </p>
+                </a>
+
+                <a href="services.html">
+                    <p>
+                        Services
+                    </p>
+                </a>
+
+                <a href="about.html">
+                    <p>
+                        About us
+                    </p>
+                </a>
+                
+                <a href="contact.html">
+                    <p>
+                        Contact us
+                    </p>
+                </a>
+            </nav>
+        </header>
+        
+        <div class="background-img"></div>
+        
+        <div class="main_container">
+        <section class="contact_body_content">
+            <h2>
+                Contact us
+            </h2>
+            <input placeholder="name" title="Your first name" name="inputValue">
+            <input placeholder="email" type="email" title="Your email addimagess" name="inputValue" onblur='validateEmail(this)'>
+            <input placeholder="phone number" id="phone-num" type="tel" title="Your phone number" name="inputValue" onblur="format(this)" maxlength="12">
+            <textarea placeholder="comments.." class="comment" name="inputValue"></textarea>
+            <button onclick="Submit()">Submit</button>
+        </section>
+        
+        <aside class="contact_info">
+            <h4>
+                Other ways to reach us
+            </h4>
+            
+            <p>e&#45;mail: sbanabila&commat;dal.ca</p>
+            <p>Phone: 902&#45;999&#45;9999</p>
+            <p>Addimagess: 6299 South st, Halifax, Nova Scotia</p>
+            
+        </aside>
+        
+        <footer>
+            <p>All copyrights belong to Sultan Banabila &copy;</p>
+        </footer>
+            
+        </div>
+    </body>
+</html>

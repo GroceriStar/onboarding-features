@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tiger Tourism</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="myStyles.css">
+        <script src="myScript.js"></script>
+        <link rel="shortcut icon" href="images/logo.ico">
+    </head>
+
+    <body onLoad="rightClick()">
+
+        <header>
+            <div class="logo-div">
+            <a href="index.html">
+                <img src="images/logo.png" alt="logo" class="logo">
+            </a>
+            </div>
+
+            <div class="phone-nav">
+                <div></div>
+                <div></div>
+                <div></div>
+            <nav>
+                <a href="index.html">
+                    <p>
+                        Home page
+                    </p>
+                </a>
+
+                <a href="services.html">
+                    <p>
+                        Services
+                    </p>
+                </a>
+
+                <a href="about.html">
+                    <p>
+                        About us
+                    </p>
+                </a>
+                
+                <a href="contact.html">
+                    <p>
+                        Contact us
+                    </p>
+                </a>
+            </nav>
+            </div>
+        </header>
+        
+        <div class="background-img"></div>
+
+        <div>
+            
+            <aside class="index-news">
+                <h4>News</h4>
+                <a href="services.html"><p>Check our new loyalty program</p></a>
+                
+                <a href='contact.html'>
+                <p>Email us your images with us today, and they will be posted on our home page next week!</p>
+            </a>
+            </aside>
+            
+            <section  class="slides">
+                <h1> Featured Images by Our Customers </h1>
+                <div class="radio_buttons">
+                <img src="images/img1.png" alt="slide1" width="500" id="first_img">
+                <img src="images/img2.png" alt="slide2" width="500" id="second_img">
+                <img src="images/img3.png" alt="slide3" width="500" id="third_img">
+                
+                                
+                <input type="radio" name="slide" onclick="firstImg();" checked="checked" id="first-rad">
+                <input type="radio" name="slide" onclick="secondImg()" id="second-rad">
+                <input type="radio" name="slide" onclick="thirdImg()" id="third-rad">
+                </div>
+            </section>
+        </div>
+        
+            <div class="index-navigation">
+                <h2>
+                    Welcome to Tiger Tourism
+                </h2>
+                <a href="services.html" title="Our services">
+                <img src="images/services.png" alt="services">
+                </a>
+                <a href="about.html" title="About us">
+                <img src="images/about_us.png" alt="about us">
+                </a>
+                <a href="contact.html" title="Contact us">
+                <img src="images/contact_us.png" alt="contact us">
+                </a>
+            </div>
+
+        <footer>
+            <p>All copyrights belong to Sultan Banabila &copy;</p>
+        </footer>
+    </body>
+</html>
