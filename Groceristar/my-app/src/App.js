@@ -30,7 +30,9 @@ class App extends Component {
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
+
                             <img src={require("./img/screen-1.png")} data-video="./video/video-1.mp4" alt="Screen Preview 1"/>
+
                         </div>
                     </div>
                 </div>
@@ -45,7 +47,9 @@ class App extends Component {
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
+
                             <img src={require("./img/screen-2.png")} data-video="./video/video-2" alt="Screen Preview 2"/>
+
                         </div>
                     </div>
                 </div>
@@ -60,7 +64,9 @@ class App extends Component {
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
+
                             <img src={require("./img/screen-3.png")} data-video="./video/video-3" alt="Screen Preview 3"/>
+
                         </div>
                     </div>
                 </div>
