@@ -1,88 +1,96 @@
 import React, { Component }
 from 'react';
+import './styles.css'
 
-class App extends Component {
+        class App extends Component {
+
+    getCalendar(num) {
+        const months = ['January', 'February', 'March'];
+
+        return months[num];
+    }
+
+    componentDidMount() {
+        var numDivs = [
+            document.getElementById('dayNums1'),
+            document.getElementById('dayNums2'),
+            document.getElementById('dayNums3')
+        ];
+
+        var string = '';
+        var x = 1;
+
+        for (var i = 1; i <= 31; i++) {
+            string += '<p>' + i;
+            x++;
+            if (x === 8 && i < 31) {
+                string += '</p>';
+                string += '<br/>';
+                x = 0;
+            } else if (i === 31) {
+                string += '</p>';
+            }
+            else {
+            string += '</p>';
+        }
+        }
+
+        for (var j = 0; j < numDivs.length; j++) {
+            numDivs[j].innerHTML = string;
+        }
+    }
+
     render() {
         return (
-<main className="cd-main-content">
-    <header className="cd-header">
-        <div id="cd-logo"><img src="img/cd-logo.svg" alt="Logo"/></div>
-        <div id="cd-action"><a href="http://codyhouse.co/?p=384" className="btn">Download</a></div>
-    </header>
-    <div className="cd-product-intro">
-        <h1>App Introduction Template</h1>
-        <p>Click on the Start button to see the animated slideshow.<br/>Videos will play on large devices only, on mobile you just see images.</p>
-        <div className="cd-triggers">
-            <a href="http://codyhouse.co/?p=384" className="btn">Download</a>
-            <a href="#cd-product-tour" className="btn salmon" data-type="cd-tour">Start</a>
-        </div>
-    </div>
-
-    <div id="cd-product-tour">
-        <ul>
-            <li className="cd-single-item cd-active">
-                <div className="cd-caption">
-                    <h2>What a great feature</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.	
-                    </p>
-                </div>
-                <div className="cd-image-container">
-                    <div>
-                        <div className="cd-phone-frame"></div>
-                        <div className="cd-image-wrapper">
-
-                            <img src={require("./img/screen-1.png")} data-video="./video/video-1.mp4" alt="Screen Preview 1"/>
-
+                <main>
+                    <div className='monthWrapper'>
+                    <div className='month'><h3>{this.getCalendar(0)}</h3></div>
+                
+                        <ul className='days'>
+                            <li>Mon</li>
+                            <li>Tus</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                            <li>Sun</li>
+                        </ul>
+                        <div id='dayNums1'></div>
+                    </div>
+                
+                    <div className='monthWrapper'>
+                    <div className='month'><h3>{this.getCalendar(1)}</h3></div>
+                
+                        <ul className='days'>
+                            <li>Mon</li>
+                            <li>Tus</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                            <li>Sun</li>
+                        </ul>
+                        <div id='dayNums2'></div>
+                    </div>
+                
+                    <div className='monthWrapper'>
+                    <div className='month'><h3>{this.getCalendar(2)}</h3></div>
+                
+                        <ul className='days'>
+                            <li>Mon</li>
+                            <li>Tus</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                            <li>Sun</li>
+                        </ul>
+                        <div id='dayNums3'>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li className="cd-single-item cd-not-visible cd-move-right">
-                <div className="cd-caption">
-                    <h2>This one is even better</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.	
-                    </p>
-                </div>
-                <div className="cd-image-container">
-                    <div>
-                        <div className="cd-phone-frame"></div>
-                        <div className="cd-image-wrapper">
-
-                            <img src={require("./img/screen-2.png")} data-video="./video/video-2" alt="Screen Preview 2"/>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li className="cd-single-item cd-not-visible cd-move-right">
-                <div className="cd-caption">
-                    <h2>Feature number 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.	
-                    </p>
-                </div>
-                <div className="cd-image-container">
-                    <div>
-                        <div className="cd-phone-frame"></div>
-                        <div className="cd-image-wrapper">
-
-                            <img src={require("./img/screen-3.png")} data-video="./video/video-3" alt="Screen Preview 3"/>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div className="cd-slider-nav">
-        <a className="cd-prev" href="#0">Previous</a>
-        <a className="cd-next" href="#0">Next</a>
-    </div>
-
-    <div className="cd-loader"></div>
-</main>
-        );
+                </main>
+                );
     }
-};
-
+}
+;
 export default App;
