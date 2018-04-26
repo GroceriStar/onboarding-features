@@ -1,5 +1,6 @@
 * {
     text-align: center;
+    max-width: 2500px;
 }
 
 .monthWrapper {
@@ -26,7 +27,7 @@
 }
 
 #dayNums1, #dayNums2, #dayNums3 {
-    margin-left: 3%;
+    margin-left: 4%;
 }
 
 #dayNums1 p, #dayNums2 p, #dayNums3 p {
