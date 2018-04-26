@@ -3,35 +3,34 @@
     max-width: 2500px;
 }
 
-.monthWrapper {
+#month {
     box-sizing: border-box;
     border: 1px solid black;
     margin-bottom: 5%;
     vertical-align: sub;
 }
 
-.month h3{
+#month h3{
     display: inline-block;
     border-bottom: 1px solid black;
 }
 
-.days {
+#days {
     display: flex;
     justify-content: center;
 }
 
-.days * {
+#days * {
     margin-right: 4%;
     list-style-type: none;
     border-bottom: 1px solid black;
 }
 
-#dayNums1, #dayNums2, #dayNums3 {
+#dayNums {
     margin-left: 4%;
 }
 
-#dayNums1 p, #dayNums2 p, #dayNums3 p {
+#dayNums p {
     display: inline-block;
     margin-right: 4%;
-    
 }
