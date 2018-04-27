@@ -1,0 +1,36 @@
+* {
+    text-align: center;
+    max-width: 2500px;
+}
+
+#month {
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin-bottom: 5%;
+    vertical-align: sub;
+}
+
+#month h3{
+    display: inline-block;
+    border-bottom: 1px solid black;
+}
+
+#days {
+    display: flex;
+    justify-content: center;
+}
+
+#days * {
+    margin-right: 4%;
+    list-style-type: none;
+    border-bottom: 1px solid black;
+}
+
+#dayNums {
+    margin-left: 4%;
+}
+
+#dayNums p {
+    display: inline-block;
+    margin-right: 4%;
+}
