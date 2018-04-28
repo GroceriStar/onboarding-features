@@ -22,12 +22,7 @@ import React, { Component } from 'react';
                     </p>
                 </div>
                 <div className="cd-image-container">
-                    <div>
-                        <div className="cd-phone-frame"></div>
-                        <div className="cd-image-wrapper">
-                            <img src={require("./assets/images/screen-1.png")} data-video="./assets/video/video-1" alt="Screen Preview 1"/>
-                        </div>
-                    </div>
+                      <img src={require("./assets/images/screen-1.png")} data-video="./assets/video/video-1" alt="Screen Preview 1"/>
                 </div>
             </li>
             <li className="cd-single-item cd-not-visible cd-move-right">

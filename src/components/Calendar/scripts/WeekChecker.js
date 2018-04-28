@@ -16,6 +16,8 @@ class WeekChecker extends Component {
                 this.setWorkDays(day.getDays(i));
             }
         }
+        
+        return workDays = workDays.concat(weekend);
     }
 
     setWorkDays(day) {
@@ -35,7 +37,7 @@ class WeekChecker extends Component {
     }
 
     render() {
-        return <div>{this.getDay()}</div>;
+        return <div>{this.getDays()}</div>;
     }
 }
 ;

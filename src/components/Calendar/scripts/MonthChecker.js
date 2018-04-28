@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import WeekChecker from './WeekChecker';
 
 class MonthChecker extends Component {
     getMonths() {
@@ -10,8 +11,12 @@ class MonthChecker extends Component {
     }
 
     render() {
-        let month = new Date().getMonth();
-        return <div>The month is {this.getMonthName(month)}</div>;
+        return (
+                <div>
+        {this.getMonths()}
+                </div>
+                );
+        
     }
 }
 ;
