@@ -3,13 +3,13 @@ import React, { Component } from 'react';
         class Template extends Component {
         render() {
         return (
-<div className="App">
+<main class="cd-main-content">
     <div className="cd-product-intro">
         <h1>App Introduction Template</h1>
-        <p>Click on the Start button to see the animated slideshow.<br/>Videos will play on large devices only, on mobile you just see images.</p>
+        <p>Click on the Start button to see the animated slideshow.<br />Videos will play on large devices only, on mobile you just see images.</p>
         <div className="cd-triggers">
-            <a href="http://codyhouse.co/?p=384" className="btn">Download</a>
-            <a href="#cd-product-tour" className="btn salmon" data-type="cd-tour">Start</a>
+            <a href="http://codyhouse.co/?p=384" class="btn">Download</a>
+            <a href="#cd-product-tour" class="btn salmon" data-type="cd-tour">Start</a>
         </div>
     </div>
 
@@ -22,7 +22,12 @@ import React, { Component } from 'react';
                     </p>
                 </div>
                 <div className="cd-image-container">
-                      <img src={require("./assets/images/screen-1.png")} data-video="./assets/video/video-1" alt="Screen Preview 1"/>
+                    <div>
+
+                        <div className="cd-image-wrapper">
+                            <img src={require("./assets/images/screen-1.png")} data-video="./assets/video/video-1" alt="Screen Preview 1" />
+                        </div>
+                    </div>
                 </div>
             </li>
             <li className="cd-single-item cd-not-visible cd-move-right">
@@ -35,7 +40,7 @@ import React, { Component } from 'react';
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img src={require("./assets/images/screen-2.png")} data-video="video/video-2" alt="Screen Preview 2"/>
+                            <img src={require("./assets/images/screen-2.png")} data-video="./assets/video/video-2" alt="Screen Preview 2" />
                         </div>
                     </div>
                 </div>
@@ -50,7 +55,7 @@ import React, { Component } from 'react';
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img src={require("./assets/images/screen-3.png")} data-video="video/video-3" alt="Screen Preview 3"/>
+                            <img src={require("./assets/images/screen-3.png")} data-video="./assets/video/video-3" alt="Screen Preview 3" />
                         </div>
                     </div>
                 </div>
@@ -64,9 +69,9 @@ import React, { Component } from 'react';
     </div>
 
     <div className="cd-loader"></div>
-</div>
+</main>
                 );
-                }
+        }
         }
 
 export default Template;

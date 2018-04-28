@@ -26,11 +26,10 @@
     border-bottom: 1px solid black;
 }
 
-#dayNums {
-    
+#days div {
+    border: none;
 }
 
-#dayNums p {
-    display: inline-block;
-    margin-right: 4%;
+#dayNums {
+    border: none;
 }

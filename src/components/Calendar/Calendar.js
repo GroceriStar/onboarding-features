@@ -29,7 +29,6 @@ class Calendar extends Component {
 
             s += "<ul id='days'>" + this.getDays() + '</ul>'; //add days
 
-            s += "<div id='dayNums'>" + this.getNums() + "</div>"; //add numbers
 
             s += "</div>"; //close wrapper
             
@@ -39,75 +38,50 @@ class Calendar extends Component {
         months.innerHTML = s;
     }
 
-    /*TODO => ix numbers under days*/
+    /*adds each day with its number in one div*/
     getDays() {
         var string = '';
         var x = 0;
         var nums = this.ReturnDays();
-        var remainder;
         
         for (var j = 12; j < 19; j++) {
-            string += "<div id=''>";
+            string += "<div>"; //create div for day at index j
             string += "<li>" + dates[j] + '</li>'; //add days as list items
-            string += '<p>';
             
-            remainder = 4 % x;
             
-            while(remainder !== 0 && x < nums.length) {
-                string += nums[x];
+            while(nums[x] !== 'X' && x < nums.length) { //while current element is not X
+                string += "<p id='dayNums'>"; //add each number as a p element
+                string += nums[x]; //get number
+                string += '</p>'; //close the tag
+                string += '<br />'; //add spacing
                 x++;
-                remainder = 4 % x;
             }
-            
-            string += '</p>';
-            string += '</div>';
+            x++; //move to the next element to add it to the next day
+            string += '</div>'; //close the day div
         }
-        
-        console.log(nums);
         
         return string;
     }
 
     ReturnDays() {
-        var n = 0;
-        var x = [];
+        var n = 0; // adds numbers to be implemented under each day
+        var x = []; //stores numbers
 
-        for (var i = 1; i < 31; i++) {
+        for (var i = 1; i <= 31; i++) { //loop the same amount as the number of days in a month
             n = i;
-            x.push(n);
+            x.push(n); //add current element
             while (n <= 31) {
-                n += 7;
+                n += 7; // get the next week's date of the same day
                 
-                if (n <= 31) {
+                if (n <= 31) { //a month cannot have more than 31 days
                     x.push(n);
                 }
             }
+            
+            x.push('X'); //a break between each day
         }
 
         return x;
-    }
-
-    getNums() {
-        var string = '';
-        var x = 1;
-        let numArray = [];
-
-        /*add 7 numbers in each row*/
-        for (var i = 1; i <= 31; i++) {
-            string += '<p>' + i;
-            x++;
-
-            if (x === 8 && i < 31) { //if the 8th character is reached
-                string += '</p>'; //close tag
-                string += '<br/>'; //add line break
-                x = 1; //reset counter
-            } else if (i === 31) { //if last element is reached
-                string += '</p>'; //close tag
-            } else {
-                string += '</p>'; //otherwise close tag
-            }
-        }
-        return string;
     }
 
     componentDidMount() {
