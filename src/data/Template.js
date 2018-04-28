@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import Feature from './scripts/Features';
+
+let feature1 = new Feature();
+let feature2 = new Feature();
+let feature3 = new Feature();
 
         class Template extends Component {
+            
         render() {
         return (
 <main class="cd-main-content">
@@ -17,45 +23,48 @@ import React, { Component } from 'react';
         <ul>
             <li className="cd-single-item cd-active">
                 <div className="cd-caption">
-                    <h2>What a great feature</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.	
-                    </p>
+                    
+                    <Feature name="What a great feature" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
+                    quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem." />
                 </div>
+                
                 <div className="cd-image-container">
                     <div>
 
                         <div className="cd-image-wrapper">
-                            <img src={require("./assets/images/screen-1.png")} data-video="./assets/video/video-1" alt="Screen Preview 1" />
+                            <img src={require("./images/screen-1.png")} data-video="./video/video-1" alt="Screen Preview 1" />
                         </div>
                     </div>
                 </div>
             </li>
             <li className="cd-single-item cd-not-visible cd-move-right">
                 <div className="cd-caption">
-                    <h2>This one is even better</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.	
-                    </p>
+                
+                   <Feature name="This one is even better" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
+                quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem."/> 
+                
                 </div>
                 <div className="cd-image-container">
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img src={require("./assets/images/screen-2.png")} data-video="./assets/video/video-2" alt="Screen Preview 2" />
+                            <img src={require("./images/screen-2.png")} data-video="./video/video-2" alt="Screen Preview 2" />
                         </div>
                     </div>
                 </div>
             </li>
             <li className="cd-single-item cd-not-visible cd-move-right">
                 <div className="cd-caption">
-                    <h2>Feature number 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.	
-                    </p>
+                    
+                    <Feature name='Feature number 3' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
+                quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.'/>
+                
                 </div>
                 <div className="cd-image-container">
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img src={require("./assets/images/screen-3.png")} data-video="./assets/video/video-3" alt="Screen Preview 3" />
+                            <img src={require("./images/screen-3.png")} data-video="./video/video-3" alt="Screen Preview 3" />
                         </div>
                     </div>
                 </div>
