@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Feature from './Features';
-
-let feature1 = new Feature();
-let feature2 = new Feature();
-let feature3 = new Feature();
+import screen01 from '../assets/images/screen01.png';
+import screen02 from '../assets/images/screen02.png';
+import screen03 from '../assets/images/screen03.png';
 
         class Template extends Component {
             
@@ -32,7 +31,13 @@ let feature3 = new Feature();
                     <div>
 
                         <div className="cd-image-wrapper">
-                            <img src={require("../assets/images/screen-1.png")} data-video="./video/video-1" alt="Screen Preview 1" />
+                            <img style={{
+                                width:'200px',
+                            }} 
+                            
+                        src={screen01} 
+                        data-video="./video/video-1" 
+                        alt="Screen Preview 1" />
                         </div>
                     </div>
                 </div>
@@ -48,7 +53,13 @@ let feature3 = new Feature();
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img src={require("../assets/images/screen-2.png")} data-video="./video/video-2" alt="Screen Preview 2" />
+                            <img style={{
+                                width:'200px',
+                            }}
+                            
+                        src={screen02}
+                        data-video="./video/video-2"
+                        alt="Screen Preview 2" />
                         </div>
                     </div>
                 </div>
@@ -64,7 +75,13 @@ let feature3 = new Feature();
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img src={require("../assets/images/screen-3.png")} data-video="./video/video-3" alt="Screen Preview 3" />
+                            <img style={{
+                                width:'200px',
+                            }} 
+                            
+                            src={screen03}
+                             data-video="./video/video-3" 
+                             alt="Screen Preview 3" />
                         </div>
                     </div>
                 </div>
