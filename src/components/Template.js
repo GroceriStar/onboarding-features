@@ -29,16 +29,9 @@ import screen03 from '../assets/images/screen03.png';
                 
                 <div className="cd-image-container">
                     <div>
-
-                        <div className="cd-image-wrapper">
-                            <img style={{
-                                width:'200px',
-                            }} 
-                            
-                        src={screen01} 
-                        data-video="./video/video-1" 
-                        alt="Screen Preview 1" />
-                        </div>
+                    <div className="cd-image-wrapper">
+                        <Feature imageSrc={screen01} imageAlt={'Screen Preview 1'}/>
+                    </div>
                     </div>
                 </div>
             </li>
@@ -49,17 +42,12 @@ import screen03 from '../assets/images/screen03.png';
                 quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem."/> 
                 
                 </div>
+                
                 <div className="cd-image-container">
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img style={{
-                                width:'200px',
-                            }}
-                            
-                        src={screen02}
-                        data-video="./video/video-2"
-                        alt="Screen Preview 2" />
+                            <Feature imageSrc={screen02} imageAlt="Screen Preview 2"/>
                         </div>
                     </div>
                 </div>
@@ -75,13 +63,7 @@ import screen03 from '../assets/images/screen03.png';
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <img style={{
-                                width:'200px',
-                            }} 
-                            
-                            src={screen03}
-                             data-video="./video/video-3" 
-                             alt="Screen Preview 3" />
+                            <Feature imageSrc={screen03} imageAlt="Screen Preview 3"/>
                         </div>
                     </div>
                 </div>
@@ -98,6 +80,6 @@ import screen03 from '../assets/images/screen03.png';
 </main>
                 );
         }
-        }
+        };
 
 export default Template;
