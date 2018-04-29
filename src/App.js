@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Template from './data/Template';
+import Template from './components/Template';
 
         class App extends Component {
         render() {

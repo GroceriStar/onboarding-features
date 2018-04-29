@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MonthChecker from './scripts/MonthChecker';
-import WeekChecker from './scripts/WeekChecker';
-import './styles/styles.css';
+import MonthChecker from './MonthChecker';
+import WeekChecker from './WeekChecker';
+import '../assets/css/styles.css';
 
 let dates = new Array();
 
