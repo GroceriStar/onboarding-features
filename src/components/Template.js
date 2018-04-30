@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Feature from './Features';
+import FeatureImage from './FeatureImage';
 import screen01 from '../assets/images/screen01.png';
 import screen02 from '../assets/images/screen02.png';
 import screen03 from '../assets/images/screen03.png';
@@ -30,7 +31,7 @@ import screen03 from '../assets/images/screen03.png';
                 <div className="cd-image-container">
                     <div>
                     <div className="cd-image-wrapper">
-                        <Feature imageSrc={screen01} imageAlt={'Screen Preview 1'}/>
+                        <FeatureImage imageSrc={screen01} imageAlt={'Screen Preview 1'}/>
                     </div>
                     </div>
                 </div>
@@ -47,7 +48,7 @@ import screen03 from '../assets/images/screen03.png';
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <Feature imageSrc={screen02} imageAlt="Screen Preview 2"/>
+                            <FeatureImage imageSrc={screen02} imageAlt="Screen Preview 2"/>
                         </div>
                     </div>
                 </div>
@@ -63,7 +64,7 @@ import screen03 from '../assets/images/screen03.png';
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <Feature imageSrc={screen03} imageAlt="Screen Preview 3"/>
+                            <FeatureImage imageSrc={screen03} imageAlt="Screen Preview 3"/>
                         </div>
                     </div>
                 </div>
