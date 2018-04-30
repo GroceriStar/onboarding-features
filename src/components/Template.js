@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
-import Feature from './Features';
+import Feature from './Feature';
 import FeatureImage from './FeatureImage';
 import screen01 from '../assets/images/screen01.png';
 import screen02 from '../assets/images/screen02.png';
 import screen03 from '../assets/images/screen03.png';
 
         class Template extends Component {
+            
+            getData(name, description, image, imageAlt) {
+                let data = [];
+                
+                if(image === 'x') { //if x is passed as image
+                    data.push(<Feature name={name} description={description}/>); //add feature name, and description only
+                    return data;
+                }
+                
+                else if (name === 'x' && description === 'x') { //if x is passed as name, and description
+                    data.push(<FeatureImage imageSrc={image} alt={imageAlt} />); //add feature image only
+                    return data;
+                }
+                
+                //otherwise add everything together
+                data.push(<Feature  name={name} description={description}/>, <FeatureImage imageSrc={image} alt={imageAlt} />);
+                
+                return data;
+            }
             
         render() {
         return (
@@ -24,14 +43,16 @@ import screen03 from '../assets/images/screen03.png';
             <li className="cd-single-item cd-active">
                 <div className="cd-caption">
                     
-                    <Feature name="What a great feature" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
-                    quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem." />
+         <div>
+            {this.getData("What a great feature", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
+                    quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.", 'x', 'x')}
+        </div>
                 </div>
                 
                 <div className="cd-image-container">
                     <div>
                     <div className="cd-image-wrapper">
-                        <FeatureImage imageSrc={screen01} imageAlt={'Screen Preview 1'}/>
+                    <div>{this.getData('x', 'x', screen01, 'Screen Preview 1')}</div>
                     </div>
                     </div>
                 </div>
@@ -39,16 +60,19 @@ import screen03 from '../assets/images/screen03.png';
             <li className="cd-single-item cd-not-visible cd-move-right">
                 <div className="cd-caption">
                 
-                   <Feature name="This one is even better" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
-                quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem."/> 
-                
+        <div>
+        {this.getData("This one is even better", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
+                quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.", 'x', 'x')}
+        </div>
                 </div>
                 
                 <div className="cd-image-container">
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <FeatureImage imageSrc={screen02} imageAlt="Screen Preview 2"/>
+                        <div>
+                            {this.getData('x', 'x', screen02, 'Screen Preview 2')}
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -56,15 +80,19 @@ import screen03 from '../assets/images/screen03.png';
             <li className="cd-single-item cd-not-visible cd-move-right">
                 <div className="cd-caption">
                     
-                    <Feature name='Feature number 3' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
-                quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.'/>
+        <div>
+            {this.getData('Feature number 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus praesentium, \n\
+                quis ab iusto possimus quaerat perspiciatis voluptas obcaecati ipsam autem.', 'x', 'x')}
+        </div>
                 
                 </div>
                 <div className="cd-image-container">
                     <div>
                         <div className="cd-phone-frame"></div>
                         <div className="cd-image-wrapper">
-                            <FeatureImage imageSrc={screen03} imageAlt="Screen Preview 3"/>
+                        <div>
+                            {this.getData('x', 'x', screen03, 'Screen Preview 3')}
+                        </div>
                         </div>
                     </div>
                 </div>
