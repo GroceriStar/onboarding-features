@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DayChecker from './DayChecker';
 
 let workDays = new Array();
-let weekend = new Array();
+let weekend  = new Array();
 
 class WeekChecker extends Component {
 
@@ -16,7 +16,7 @@ class WeekChecker extends Component {
                 this.setWorkDays(day.getDays(i));
             }
         }
-        
+
         return workDays = workDays.concat(weekend);
     }
 
@@ -31,7 +31,7 @@ class WeekChecker extends Component {
     setWeekend(day) {
         weekend.push(day);
     }
-    
+
     getWeekend() {
         return weekend;
     }
