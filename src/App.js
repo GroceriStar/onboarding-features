@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Template from './components/Template';
+import Meal from './components/Meal';
 
   class App extends Component {
     render() {
-        return <Template />;
+        return <Meal />;
     }
   };
 
