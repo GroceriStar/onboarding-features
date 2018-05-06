@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
 
-let html = '';
-
 class Meal extends Component {
     state = {
-        meal: '',
         meals: [],
+        name: '',
+        names: [],
         image: '',
         images: [],
         description: '',
@@ -14,9 +13,13 @@ class Meal extends Component {
         step: '',
         steps: []
     };
-
+    
     renderMeals() {
-        return _.map(this.state.meals, meal => <p>{meal}</p>);
+        return _.map(this.state.meals, meal => <li>{meal}</li>);
+    }
+
+    renderNames() {
+        return _.map(this.state.names, name => <p>{name}</p>);
     }
 
     renderImages() {
@@ -32,25 +35,13 @@ class Meal extends Component {
     }
 
     submitOutput() {
-        this.setState({meals: [...this.state.meals, this.state.meal],
+        this.setState({names: [...this.state.names, this.state.name],
             images: [...this.state.images, this.state.image],
             descriptions: [...this.state.descriptions, this.state.description],
             steps: [...this.state.steps, this.state.step]});
-    }
-
-    renderOutput() {
-        /*
-         * TODO:
-         * Create a new list item eveytime button is pressed
-         */
-        return (
-                <li>
-                    {this.renderMeals()}
-                    { this.renderImages()}
-                    {this.renderDescriptions()}
-                    {this.renderSteps()}
-                 </li>
-                );
+        
+        this.setState({meals: [...this.state.meals, this.renderNames() 
+        + this.renderImages() + this.renderDescriptions() + this.renderSteps()]}); //add values to meals array
     }
 
     render() {
@@ -62,8 +53,8 @@ class Meal extends Component {
                            onChange={e => this.setState({image: e.target.value})} />
                 
                     <input 
-                        onChange={e => this.setState({meal: e.target.value})} 
-                        value={this.state.meal}
+                        onChange={e => this.setState({name: e.target.value})} 
+                        value={this.state.name}
                         type="text"
                         placeholder="Meal name"/>
                 
@@ -74,12 +65,12 @@ class Meal extends Component {
                               onChange={e => this.setState({step: e.target.value})}/>
                 
                     <button
-                        onClick={() => this.submitOutput()} >
+                        onClick={() => this.submitOutput()}>
                         Add meal
                     </button>
                 
                     <ul id="food-items">
-                        {this.renderOutput()}
+                    {this.renderMeals()}
                     </ul>
                 </div>
                                         );
