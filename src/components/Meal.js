@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 class Meal extends Component {
     state = {
+        meal: '',
         meals: [],
         name: '',
         names: [],
@@ -13,9 +14,13 @@ class Meal extends Component {
         step: '',
         steps: []
     };
-    
+
     renderMeals() {
-        return _.map(this.state.meals, meal => <li>{meal}</li>);
+        return (_.map(this.state.meals, meal => <li>{meal}</li>));
+    }
+
+    resetMeals() {
+        this.state.meals = [];
     }
 
     renderNames() {
@@ -39,9 +44,15 @@ class Meal extends Component {
             images: [...this.state.images, this.state.image],
             descriptions: [...this.state.descriptions, this.state.description],
             steps: [...this.state.steps, this.state.step]});
-        
-        this.setState({meals: [...this.state.meals, this.renderNames() 
-        + this.renderImages() + this.renderDescriptions() + this.renderSteps()]}); //add values to meals array
+
+        this.setState({meal: this.state.name + this.renderImages()});
+        this.setState({meals: [...this.state.meals, this.state.meal]});
+    }
+
+    renderOutput() {
+        return (
+        this.renderMeals()
+        );
     }
 
     render() {
@@ -49,7 +60,7 @@ class Meal extends Component {
                 <div>
                     <h2>Today you should eat this</h2>
                     <input placeholder="Image url" 
-                           type="url" 
+                           type="url"
                            onChange={e => this.setState({image: e.target.value})} />
                 
                     <input 
@@ -70,7 +81,7 @@ class Meal extends Component {
                     </button>
                 
                     <ul id="food-items">
-                    {this.renderMeals()}
+                        {this.renderMeals()}
                     </ul>
                 </div>
                                         );
