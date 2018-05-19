@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 class Meal extends Component {
     state = {
-        meal: '',
+        meal: [],
         meals: [],
         name: '',
         names: [],
@@ -16,11 +16,8 @@ class Meal extends Component {
     };
 
     renderMeals() {
-        return (_.map(this.state.meals, meal => <li>{meal}</li>));
-    }
-
-    resetMeals() {
-        this.state.meals = [];
+        return (
+                _.map(this.state.meals, meal => <li>{meal}</li>));
     }
 
     renderNames() {
@@ -45,14 +42,8 @@ class Meal extends Component {
             descriptions: [...this.state.descriptions, this.state.description],
             steps: [...this.state.steps, this.state.step]});
 
-        this.setState({meal: this.state.name + this.renderImages()});
-        this.setState({meals: [...this.state.meals, this.state.meal]});
-    }
-
-    renderOutput() {
-        return (
-        this.renderMeals()
-        );
+        this.state.meal = [this.renderNames(), this.renderImages(), this.renderDescriptions(), this.renderSteps()];
+        this.state.meals = [...this.state.meals, this.state.meal];
     }
 
     render() {
@@ -80,7 +71,7 @@ class Meal extends Component {
                         Add meal
                     </button>
                 
-                    <ul id="food-items">
+                    <ul id="food-items" onChange={() => this.resetMeals()}>
                         {this.renderMeals()}
                     </ul>
                 </div>
