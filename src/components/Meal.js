@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button, ListGroup, ListGroupItem, Form, Input, FormGroup, Label } from 'reactstrap';
-import _ from 'lodash';
 
 const mealArray = [];
 
@@ -30,7 +29,7 @@ class Meal extends Component {
         mealArray.push(
                 <ListGroupItem color="info">
                     <h2>{this.state.name}</h2>
-                    <img src={this.state.image} />
+                    <img src={this.state.image} alt="not found" />
                                                                                     
                     <h3>Steps:</h3>
                     <p>{this.state.description}</p>
