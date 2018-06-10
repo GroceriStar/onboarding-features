@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Button, ListGroup, ListGroupItem, Form, Input, FormGroup, Label } from 'reactstrap';
 import _ from 'lodash';
+
+const mealArray = [];
 
 class Meal extends Component {
     state = {
-        meal: [],
-        meals: [],
         name: '',
         names: [],
         image: '',
@@ -15,66 +17,82 @@ class Meal extends Component {
         steps: []
     };
 
-    renderMeals() {
-        return (
-                _.map(this.state.meals, meal => <li>{meal}</li>));
-    }
-
-    renderNames() {
-        return _.map(this.state.names, name => <p>{name}</p>);
-    }
-
-    renderImages() {
-        return _.map(this.state.images, image => <img src={image} />);
-    }
-
-    renderDescriptions() {
-        return _.map(this.state.descriptions, description => <p>{description}</p>);
-    }
-
-    renderSteps() {
-        return _.map(this.state.steps, step => <p>{step}</p>);
-    }
-
     submitOutput() {
         this.setState({names: [...this.state.names, this.state.name],
             images: [...this.state.images, this.state.image],
             descriptions: [...this.state.descriptions, this.state.description],
             steps: [...this.state.steps, this.state.step]});
 
-        this.state.meal = [this.renderNames(), this.renderImages(), this.renderDescriptions(), this.renderSteps()];
-        this.state.meals = [...this.state.meals, this.state.meal];
+        this.renderArray();
+    }
+
+    renderArray() {
+        mealArray.push(
+                <ListGroupItem color="info">
+                    <h2>{this.state.name}</h2>
+                    <img src={this.state.image} />
+                                                                                    
+                    <h3>Steps:</h3>
+                    <p>{this.state.description}</p>
+                    <dl>
+                        <dt>Steps:</dt>
+                        <dd>{this.state.step}</dd>
+                    </dl>
+                </ListGroupItem>
+                );
     }
 
     render() {
         return(
-                <div>
+                <Container>
                     <h2>Today you should eat this</h2>
-                    <input placeholder="Image url" 
-                           type="url"
-                           onChange={e => this.setState({image: e.target.value})} />
+                    <Form>
+                        <FormGroup>
+                            <Label>
+                                Image URL
+                            </Label>
+                            <Input placeholder="https://example.com" 
+                                   type="url"
+                                   onChange={e => this.setState({image: e.target.value})} />
+                        </FormGroup>
                 
-                    <input 
-                        onChange={e => this.setState({name: e.target.value})} 
-                        value={this.state.name}
-                        type="text"
-                        placeholder="Meal name"/>
+                        <FormGroup>
+                            <Label>
+                                Meal Name
+                            </Label>
+                            <Input 
+                                onChange={e => this.setState({name: e.target.value})} 
+                                value={this.state.name}
+                                type="text"/>
+                        </FormGroup>
                 
-                    <textarea placeholder="Description" 
-                              onChange={e => this.setState({description: e.target.value})} />
+                        <FormGroup>
+                            <Label>
+                                Description
+                            </Label>
+                            <Input type="textarea" 
+                                   onChange={e => this.setState({description: e.target.value})} />
+                        </FormGroup>
                 
-                    <textarea placeholder="Steps"
-                              onChange={e => this.setState({step: e.target.value})}/>
+                        <FormGroup>
+                            <Label>
+                                Steps
+                            </Label>
+                            <Input type="textarea"
+                                   onChange={e => this.setState({step: e.target.value})}/>
+                        </FormGroup>
+                        
+                        <Button color="primary"
+                                onClick={() => this.submitOutput()}>
+                            Add meal
+                        </Button>
                 
-                    <button
-                        onClick={() => this.submitOutput()}>
-                        Add meal
-                    </button>
+                    </Form>
                 
-                    <ul id="food-items" onChange={() => this.resetMeals()}>
-                        {this.renderMeals()}
-                    </ul>
-                </div>
+                    <ListGroup id="food-items">
+                        {mealArray}
+                    </ListGroup>
+                </Container>
                                         );
                             }
                         }
