@@ -26,19 +26,31 @@ class Meal extends Component {
     }
 
     renderArray() {
-        mealArray.push(
-                <ListGroupItem color="info">
-                    <h2>{this.state.name}</h2>
-                    <img src={this.state.image} alt="not found" />
-                                                                                    
-                    <h3>Steps:</h3>
-                    <p>{this.state.description}</p>
-                    <dl>
-                        <dt>Steps:</dt>
-                        <dd>{this.state.step}</dd>
-                    </dl>
-                </ListGroupItem>
-                );
+        let content = [this.state.name, this.state.image, this.state.description, this.state.step];
+        let valid = true;
+
+        for (let i = 0; i < content.length; i++) {
+            console.log(content[i]);
+            if (content[i] === '') {
+                valid = false;
+            }
+        }
+        if (valid) {
+            mealArray.push(
+                    <ListGroupItem color="info">
+                        <h2>{this.state.name}</h2>
+                        <img src={this.state.image} alt="not found" />
+                    
+                        <h3>Steps:</h3>
+                        <p>{this.state.description}</p>
+                        <dl>
+                            <dt>Steps:</dt>
+                            <dd>{this.state.step}</dd>
+                        </dl>
+                    </ListGroupItem>
+                    );
+            return mealArray;
+        }
     }
 
     render() {
@@ -80,12 +92,11 @@ class Meal extends Component {
                             <Input type="textarea"
                                    onChange={e => this.setState({step: e.target.value})}/>
                         </FormGroup>
-                        
+                
                         <Button color="primary"
                                 onClick={() => this.submitOutput()}>
                             Add meal
                         </Button>
-                
                     </Form>
                 
                     <ListGroup id="food-items">
