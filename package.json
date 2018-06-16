@@ -8,7 +8,7 @@
     "gatsby-link": "^1.6.44",
     "lodash": "^4.17.10",
     "npm": "^6.0.0",
-    "react": "^16.4.0",
+    "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
     "reactstrap": "^6.1.0"
