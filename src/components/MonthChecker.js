@@ -1,24 +1,65 @@
-import React, {Component} from 'react';
-import WeekChecker from './WeekChecker';
+let jan = {
+    name: 'January',
+    numOfDays: 31
+};
 
-class MonthChecker extends Component {
-    getMonths() {
-        let months = ['January', 'Feburary', 'March', 'April', 'May',
-            'June', 'July', 'August', 'September', 'October',
-            'November', 'December'];
+let feb = {
+    name: 'Feburary',
+    numOfDays: 28
+};
 
-        return months;
-    }
+let march = {
+    name: 'March',
+    numOfDays: 31
+};
 
-    render() {
-        return (
-                <div>
-        {this.getMonths()}
-                </div>
-                );
-        
-    }
-}
-;
+let april = {
+    name: 'April',
+    numOfDays: 30
+};
 
-export default MonthChecker;
+let may = {
+    name: 'May',
+    numOfDays: 31
+};
+
+let jun = {
+    name: 'June',
+    numOfDays: 30
+};
+
+let jul = {
+    name: 'July',
+    numOfDays: 31
+};
+
+let aug = {
+    name: 'August',
+    numOfDays: 31
+};
+
+let sep = {
+    name: 'January',
+    numOfDays: 30
+};
+
+let oct = {
+    name: 'October',
+    numOfDays: 31
+};
+
+let nov = {
+    name: 'November',
+    numOfDays: 30
+};
+
+let dec = {
+    name: 'December',
+    numOfDays: 31
+};
+
+
+let monthArray = [jan, feb, march, april, may, jun, jul, aug, sep, oct, nov, dec];
+
+
+export default monthArray;

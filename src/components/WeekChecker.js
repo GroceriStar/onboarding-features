@@ -1,45 +1,21 @@
 import React, {Component} from 'react';
-import DayChecker from './DayChecker';
+import days from './DayChecker';
 
-let workDays = new Array();
-let weekend  = new Array();
+let workDays = [];
+let weekend = [];
 
-class WeekChecker extends Component {
 
-    getDays() {
-        let day = new DayChecker();
-
-        for (var i = 0; i < 7; i++) {
-            if (day.getDays(i) === ('Saturday') || day.getDays(i) === ('Sunday')) {
-                this.setWeekend(day.getDays(i));
-            } else {
-                this.setWorkDays(day.getDays(i));
-            }
-        }
-
-        return workDays = workDays.concat(weekend);
-    }
-
-    setWorkDays(day) {
-        workDays.push(day);
-    }
-
-    getWorkDays() {
-        return workDays;
-    }
-
-    setWeekend(day) {
-        weekend.push(day);
-    }
-
-    getWeekend() {
-        return weekend;
-    }
-
-    render() {
-        return <div>{this.getDays()}</div>;
+for (var i = 0; i < 7; i++) {
+    if (days[i] === ('Saturday') || days[i] === ('Sunday')) {
+        weekend.push(days[i]);
+    } else {
+        workDays.push(days[i]);
     }
 }
-;
 
-export default WeekChecker;
+let weekArray = [
+        workDays,
+        weekend
+];
+
+export default weekArray;
