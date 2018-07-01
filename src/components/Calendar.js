@@ -29,7 +29,7 @@ class Calendar extends Component {
             a.push(
                     <div id="month">
                         <h3>{dates[i].name}</h3>
-                        <ul id="days">{this.getDays()}</ul>
+                        <ul id="days">{this.getDays(i)}</ul>
                     </div>
                     );
         }
@@ -37,44 +37,47 @@ class Calendar extends Component {
         return a;
     }
 
-    /*adds each day with its number in one div*/
-    getDays() {
-        let days = [];
-        let n = [];
-        let d = [];
-        var x = 0; //keeps track of numbers
-        let i = 0; //keeps track of days
-        var nums = this.ReturnDays();
+    /*adds each day with its number in one vertical div*/
+    getDays(monthID) {
+        let dayNames = [];
+        let numbers = [];
+        let dayDiv = [];
+        let dayId = 0; //current day in the array
 
-        for (var j = 12; j < 19; j++) {
-            days.push(
+        for (let j = 12; j < 19; j++) {
+            dayNames.push(
                     <li>{dates[j]}</li>
                     );
-
-            while (nums[x] !== 'X' && x < nums.length) { //while current element is not X
-                n.push(<p id="dayNums">{nums[x]}</p>);
-                n.push(<br />);
-                x++;
-            }
-            d.push(<div>{days[i]}{n}</div>);
-            n = [];
-            i++;
-            x++; //move to the next element to add it to the next day
         }
-        return d;
+
+        let nums = this.ReturnDays(dates[monthID].numOfDays); //get number of days in the current month
+
+        for (let x = 0; x < nums.length; x++) {
+            if (nums[x] !== 'X') {
+                numbers.push(<div><p id="dayNums">{nums[x]}</p><br /></div>);
+            } else {
+                if (dayId < dayNames.length) {
+                    dayDiv.push(<div>{dayNames[dayId]}{numbers}</div>);
+                    dayId++;
+                    numbers = []; //reset to add numbers to the next day
+                }
+            }
+        }
+
+        return dayDiv;
     }
 
-    ReturnDays() {
-        var n = 0; // adds numbers to be implemented under each day
-        var x = []; //stores numbers
+    ReturnDays(numOfDays) {
+        let n = 0; // adds numbers to be implemented under each day
+        let x = []; //stores numbers
 
-        for (var i = 1; i <= 31; i++) { //loop the same amount as the number of days in a month
+        for (let i = 1; i <= numOfDays; i++) { //loop the same amount as the number of days in a month
             n = i;
             x.push(n); //add current element
-            while (n <= 31) {
+            while (n <= numOfDays) {
                 n += 7; // get the next week's date of the same day
 
-                if (n <= 31) { //a month cannot have more than 31 days
+                if (n <= numOfDays) { //a month cannot have more than 31 days
                     x.push(n);
                 }
             }
